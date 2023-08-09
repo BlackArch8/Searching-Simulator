@@ -14,14 +14,16 @@ public class Node {
     String nodeLabel;
     int posX;
     int posY;
-    double pathCost;
+    double Pcost;
+    
     
     Node(int nr, String nL, int px, int py){
         nodeNr = nr;
         nodeLabel = nL;
         posX = px;
         posY = py;
-        pathCost = Double.MAX_VALUE;
+        Pcost = Double.MAX_VALUE;
+        
     }
     
     void printNode(){

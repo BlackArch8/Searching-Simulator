@@ -3,9 +3,13 @@ package searchingsimulator;
 import java.util.ArrayList;
 
 /**
+ *
+ * Untuk DFS saya hanya mengubah sedikit dari BFS,
+ * yaitu mengubah cara menambahkan node ke openList
+ * Untuk BFS, node ditambahkan ke openList di akhir (mirip queue),
+ * sedangkan untuk DFS saya menambahkan node ke openList di awal (mirip stack)
+ * 
  * @author Doni Andrian
- * Untuk DFS saya hanya mengubah sedikit dari BFS, yaitu mengubah cara menambahkan node ke openList
- * Untuk BFS, node ditambahkan ke openList di akhir (mirip queue), sedangkan untuk DFS saya menambahkan node ke openList di awal (mirip stack)
  */
 
 public class DFS {
@@ -39,10 +43,9 @@ public class DFS {
 
             if (cn.nodeNr != dGraph.goalNode) {
                 for (Node child : dGraph.graph.nodes) {
-                   
                     if (dGraph.dg_nodes.contains(child) && // belum dikunjungi
                             dGraph.graph.adjMatrix[cn.nodeNr][child.nodeNr] < 1000000.0) {
-                        dGraph.openList.add(0, child); // tambahkan di awal 
+                        dGraph.openList.add(0, child); // tambahkan di awal
                         dGraph.dg_nodes.remove(child);
                     }
                 }
